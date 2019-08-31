@@ -1,10 +1,12 @@
 package com.bkt.biomilkdistribution.services;
 
 import com.bkt.biomilkdistribution.web.model.MilkDto;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.UUID;
 
+@Slf4j
 @Service
 public class MilkServiceImpl implements MilkService {
     @Override
@@ -20,5 +22,15 @@ public class MilkServiceImpl implements MilkService {
         return MilkDto.builder()
                 .id(UUID.randomUUID())
                 .build();
+    }
+
+    @Override
+    public void updateMilk(UUID milkId, MilkDto milkDto) {
+        // todo do implement
+    }
+
+    @Override
+    public void deleteMilk(UUID milkId) {
+        log.debug("Deleting milk");
     }
 }
